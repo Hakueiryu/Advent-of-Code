@@ -40,10 +40,8 @@ def uniform_cost_search(start, goal):
         cost, node = x, queue[x].pop()
         if not queue[x]:
             del queue[x]
-
         if node not in seen:
             seen.add(node)
-
             if node == goal:
                 return cost
             for s in get_adjacent(*node):
