@@ -32,9 +32,7 @@ def part2(file):
         bag = {}
         # Parse gameId and rounds
         gameId, rounds = line.split(":")
-        gameId = int(gameId.split()[1])
         rounds = rounds.split(";")
-        possible = True
         for round in rounds:
             # Divide each extraction of a round
             outcomes = [x.strip() for x in round.split(",")]
