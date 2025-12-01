@@ -1,31 +1,31 @@
 from numbers import Number
 
 def part1(file) -> Number:
-    pos: int = 50
+    cur: int = 50
     output: int = 0
     for line in file:
         direction, distance = line[0], int(line[1:])
         if direction == "R":
-            pos += distance
+            cur += distance
         if direction == "L":
-            pos -= distance
+            cur -= distance
 
-        if pos % 100 == 0:
+        if cur % 100 == 0:
             output += 1
     return output
 
 def part2(file) -> Number:
-    pos: int = 50
+    cur: int = 50
     output: int = 0
     for line in file:
         direction, distance = line[0], int(line[1:])
-        prev = pos
+        prev = cur
         if direction == "R":
-            pos += distance
-            output += pos // 100 - prev // 100
+            cur += distance
+            output += cur // 100 - prev // 100
         if direction == "L":
-            pos -= distance
-            output += (prev - 1) // 100 - (pos - 1) // 100
+            cur -= distance
+            output += (prev - 1) // 100 - (cur - 1) // 100
     return output
 
 if __name__ == '__main__':
