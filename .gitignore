@@ -1,3 +1,4 @@
 # Jetbrains Stuff
 .idea
 *.iml
+.venv
